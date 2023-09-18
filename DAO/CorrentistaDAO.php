@@ -2,10 +2,10 @@
 
 namespace BancoDigital\DAO;
 
-use BancoDigital\Model\CorrenteModel;
+use BancoDigital\Model\CorrentistaModel;
 use PDO;
 
-class CorrenteDAO extends DAO
+class CorrentistaDAO extends DAO
 {
     public function __construct()
     {
@@ -24,7 +24,7 @@ class CorrenteDAO extends DAO
     {
         
 
-        $sql = "INSERT INTO corrente (nome, email, cpf, data_nasc, senha, data_cadastro) 
+        $sql = "INSERT INTO correntista (nome, email, cpf, data_nasc, senha, data_cadastro) 
                 VALUES (?, ?, ?, ?, sha1(?) ,?)";
 
         $stmt = $this->conexao->prepare($sql);
@@ -45,12 +45,12 @@ class CorrenteDAO extends DAO
     }
 
 
-    private function update(CorrenteModel $m) 
+    private function update(CorrentistaModel $m) 
     {
 
     }
 
-    public function selectByCpfAndSenha($cpf, $senha) : CorrenteModel
+    public function selectByCpfAndSenha($cpf, $senha) : CorrentistaModel
     {
         $sql = "SELECT * FROM Corrente WHERE cpf = ? AND senha = sha1(?) ";
 
@@ -59,6 +59,6 @@ class CorrenteDAO extends DAO
         $stmt->bindValue(2, $senha);
         $stmt->execute();
 
-        return $stmt->fetchObject("ApiBancoDigital\Model\CorrenteModel");
+        return $stmt->fetchObject("BancoDigital\Model\CorrentistaModel");
     }
 }

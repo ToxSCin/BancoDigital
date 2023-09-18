@@ -2,7 +2,7 @@
 
 namespace BancoDigital\Controller;
 
-use ApiBancoDigital\Model\CorrenteModel;
+use BancoDigital\Model\CorrentistaModel;
 use Exception;
 
 class CorrentistaController extends Controller
@@ -37,7 +37,7 @@ class CorrentistaController extends Controller
 
             
 
-            $model = new CorrenteModel();
+            $model = new CorrentistaModel();
             // Copiando os valores de $data para $model
             $model->id = $data->id;
             $model->email = $data->email;
