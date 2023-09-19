@@ -32,10 +32,9 @@ class CorrentistaDAO extends DAO
         $stmt->bindValue(1, $model->nome);
         $stmt->bindValue(2, $model->email);
         $stmt->bindValue(3, $model->cpf);
-        $stmt->bindValue(4, $model->data_nasc);
+       
         $stmt->bindValue(5, $model->senha);
-        $stmt->bindValue(6, $model->data_cadastro);
-
+    
         $stmt->execute();
 
 
