@@ -9,7 +9,7 @@ use PDO;
 class CorrentistaModel extends Model
 {
    
-    public $id, $nome, $email, $cpf, $data_nascimento, $senha;
+    public $id, $nome, $cpf, $senha;
     public $rows_contas; 
 
     
@@ -18,6 +18,8 @@ class CorrentistaModel extends Model
         $dao_correntista = new CorrentistaDAO();
         
         $model_preenchido = $dao_correntista->save($this);
+
+        //var_dump($model_preenchido);
 
        
         if($model_preenchido->id != null)

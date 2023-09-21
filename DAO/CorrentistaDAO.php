@@ -24,21 +24,23 @@ class CorrentistaDAO extends DAO
     {
         
 
-        $sql = "INSERT INTO correntista (nome, email, cpf, data_nasc, senha, data_cadastro) 
-                VALUES (?, ?, ?, ?, sha1(?) ,?)";
+        $sql = "INSERT INTO correntista (nome, cpf,senha) 
+                VALUES (?,  ?, sha1(?))";
 
         $stmt = $this->conexao->prepare($sql);
 
         $stmt->bindValue(1, $model->nome);
-        $stmt->bindValue(2, $model->email);
-        $stmt->bindValue(3, $model->cpf);
+        
+        $stmt->bindValue(2, $model->cpf);
        
-        $stmt->bindValue(5, $model->senha);
+        $stmt->bindValue(3, $model->senha);
     
         $stmt->execute();
 
 
         $model->id = $this->conexao->lastInsertId();
+
+        //var_dump($model);
 
         return $model;
     }

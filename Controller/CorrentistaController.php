@@ -15,7 +15,7 @@ class CorrentistaController extends Controller
             // JSON para um objeto em PHP.
             $data = json_decode(file_get_contents('php://input'));
 
-            $model = new CorrenteModel();
+            $model = new CorrentistaModel();
 
             parent::GetResponseAsJSON($model->getByCpfAndSenha($data->cpf, $data->senha)); 
 
@@ -40,12 +40,10 @@ class CorrentistaController extends Controller
             $model = new CorrentistaModel();
             // Copiando os valores de $data para $model
             $model->id = $data->id;
-            $model->email = $data->email;
             $model->nome = $data->nome;
             $model->cpf = $data->cpf;
             $model->senha = $data->senha;
-            $model->data_nasc = $data->data_nasc;
-            $model->data_cadastro = $data->data_cadastro;
+            
 
             
 
