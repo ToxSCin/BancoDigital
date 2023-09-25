@@ -41,6 +41,7 @@ class CorrentistaController extends Controller
             // Copiando os valores de $data para $model
             $model->id = $data->id;
             $model->nome = $data->nome;
+            $model->data_nascimento = $data->data_nascimento;
             $model->cpf = $data->cpf;
             $model->senha = $data->senha;
             

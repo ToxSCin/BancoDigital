@@ -9,7 +9,7 @@ use PDO;
 class CorrentistaModel extends Model
 {
    
-    public $id, $nome, $cpf, $senha;
+    public $id, $nome, $data_nascimento, $cpf, $senha;
     public $rows_contas; 
 
     

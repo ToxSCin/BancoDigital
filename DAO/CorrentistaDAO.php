@@ -24,16 +24,20 @@ class CorrentistaDAO extends DAO
     {
         
 
-        $sql = "INSERT INTO correntista (nome, cpf,senha) 
-                VALUES (?,  ?, sha1(?))";
+        $sql = "INSERT INTO correntista (nome, data_nascimento, cpf,senha) 
+                VALUES (?, ?,  ?, sha1(?))";
 
         $stmt = $this->conexao->prepare($sql);
 
         $stmt->bindValue(1, $model->nome);
+
+        $stmt->bindValue(2, $model->data_nascimento);
         
-        $stmt->bindValue(2, $model->cpf);
+        $stmt->bindValue(3, $model->cpf);
        
-        $stmt->bindValue(3, $model->senha);
+        $stmt->bindValue(4, $model->senha);
+
+        
     
         $stmt->execute();
 
@@ -53,7 +57,7 @@ class CorrentistaDAO extends DAO
 
     public function selectByCpfAndSenha($cpf, $senha) : CorrentistaModel
     {
-        $sql = "SELECT * FROM Corrente WHERE cpf = ? AND senha = sha1(?) ";
+        $sql = "SELECT * FROM correntista WHERE cpf = ? AND senha = sha1(?) ";
 
         $stmt = $this->conexao->prepare($sql);
         $stmt->bindValue(1, $cpf);
