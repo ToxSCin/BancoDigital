@@ -44,6 +44,7 @@ class CorrentistaController extends Controller
             $model->data_nascimento = $data->data_nascimento;
             $model->cpf = $data->cpf;
             $model->senha = $data->senha;
+            $model->email = $data->email;
             
 
             

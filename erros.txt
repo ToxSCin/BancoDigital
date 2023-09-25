@@ -1,7 +1,6 @@
-#0 C:\Users\Usuario\Desktop\BancoDigital\DAO\CorrentistaDAO.php(42): PDOStatement->execute()
-#1 C:\Users\Usuario\Desktop\BancoDigital\DAO\CorrentistaDAO.php(18): BancoDigital\DAO\CorrentistaDAO->insert(Object(BancoDigital\Model\CorrentistaModel))
-#2 C:\Users\Usuario\Desktop\BancoDigital\Model\CorrentistaModel.php(20): BancoDigital\DAO\CorrentistaDAO->save(Object(BancoDigital\Model\CorrentistaModel))
-#3 C:\Users\Usuario\Desktop\BancoDigital\Controller\CorrentistaController.php(51): BancoDigital\Model\CorrentistaModel->save()
-#4 C:\Users\Usuario\Desktop\BancoDigital\rotas.php(11): BancoDigital\Controller\CorrentistaController::salvar()
-#5 C:\Users\Usuario\Desktop\BancoDigital\index.php(7): include('C:\\Users\\Usuari...')
-#6 {main}
+#0 C:\Users\Usuario\Desktop\BancoDigital\DAO\ContaDAO.php(28): PDOStatement->execute()
+#1 C:\Users\Usuario\Desktop\BancoDigital\Model\CorrentistaModel.php(35): BancoDigital\DAO\ContaDAO->insert(Object(BancoDigital\Model\ContaModel))
+#2 C:\Users\Usuario\Desktop\BancoDigital\Controller\CorrentistaController.php(52): BancoDigital\Model\CorrentistaModel->save()
+#3 C:\Users\Usuario\Desktop\BancoDigital\rotas.php(11): BancoDigital\Controller\CorrentistaController::salvar()
+#4 C:\Users\Usuario\Desktop\BancoDigital\index.php(7): include('C:\\Users\\Usuari...')
+#5 {main}

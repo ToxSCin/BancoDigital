@@ -24,8 +24,8 @@ class CorrentistaDAO extends DAO
     {
         
 
-        $sql = "INSERT INTO correntista (nome, data_nascimento, cpf,senha) 
-                VALUES (?, ?,  ?, sha1(?))";
+        $sql = "INSERT INTO correntista (nome, data_nascimento, cpf, email, senha) 
+                VALUES (?, ?, ?,  ?, sha1(?))";
 
         $stmt = $this->conexao->prepare($sql);
 
@@ -34,8 +34,10 @@ class CorrentistaDAO extends DAO
         $stmt->bindValue(2, $model->data_nascimento);
         
         $stmt->bindValue(3, $model->cpf);
+
+        $stmt->bindValue(4, $model->email);
        
-        $stmt->bindValue(4, $model->senha);
+        $stmt->bindValue(5, $model->senha);
 
         
     
